@@ -59,10 +59,12 @@
             // Dodawanie Gridu do StackLayout
             container.Children.Add(grid);
         }
-
+        int liczbaRuchow = 10;
         // Funkcja taka sama jak w button clicked w XAML
         private async void ButtonClicked(object sender, EventArgs e)
         {
+            liczbaRuchow--;
+            liczbaRuchowLbl.Text = $"Liczba ruchów: {liczbaRuchow}";
             if(sender is ImageButton button)
             {
                 button.Source = button.ClassId;
@@ -90,9 +92,13 @@
                     
                 }
             }
+            if(liczbaRuchow ==  0)
+            {
+                DisplayAlert("PORAŻKA", "Przegrałeś giere synek", "zakoncz");
+            }
             if (odgadniete.Count == 3)
             {
-                DisplayAlert("GRATY", "Wygrałeś giere bratku", "OK");
+                DisplayAlert("GRATY", "Wygrałeś giere bratku", "zakoncz");
             }
         }
     }

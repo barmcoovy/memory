@@ -4,6 +4,6 @@
              x:Class="memory.MainPage">
 
     <StackLayout x:Name="container" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
-        
+        <Label x:Name="liczbaRuchowLbl" Text="Liczba ruchów: 6"/>
     </StackLayout>
 </ContentPage>
